@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey & Milestones | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 2rem 1rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+        nav h2 { color: var(--accent); font-size: 1.2rem; }
+        nav a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--accent); }
+        
+        section { background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 2rem; }
+        h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+        p { color: var(--text-muted); margin-bottom: 1rem; }
+        
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .card { background: #0f172a; padding: 1.2rem; border-radius: 8px; border: 1px solid var(--border); }
+        .card h4 { color: var(--text-main); margin-bottom: 0.5rem; font-size: 1rem; }
+
+        footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <h2>Portfolio Hub</h2>
+        <div>
+            <a href="index.html">Overview & Letter</a>
+            <a href="projects.html" class="active">Journey & Passions</a>
+        </div>
+    </nav>
+
+    <!-- Core Passions -->
+    <section>
+        <h3>Core Focus & Passions</h3>
+        <p>A look at what drives my curiosity outside of standard coursework:</p>
+        <div class="grid-3">
+            <div class="card">
+                <h4>[ Mechatronics & Hardware ]</h4>
+                <p>Exploring how physical mechanics and code intersect through robotics, system building, and hands-on design.</p>
+            </div>
+            <div class="card">
+                <h4>[ Scientific Inquiry ]</h4>
+                <p>Enjoying the systematic process of testing hypotheses, from early science fairs to competitive Science Olympiad events.</p>
+            </div>
+            <div class="card">
+                <h4>[ Community & Service ]</h4>
+                <p>Valuing collaboration and giving back—whether through local youth groups or community relief efforts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Experiences (Summarized smoothly) -->
+    <section>
+        <h3>Experience & Milestones</h3>
+        <div class="card" style="margin-bottom: 1rem;">
+            <h4>Collaborative STEM & Competitions</h4>
+            <p>I’ve really enjoyed participating in team-based challenges like Science Olympiad and LEGO robotics. Working alongside peers to troubleshoot builds and prepare for state-level events has taught me how much more you can achieve together.</p>
+        </div>
+        <div class="card">
+            <h4>Community Engagement</h4>
+            <p>Outside of school and lab projects, I’ve tried to stay grounded in service—such as volunteering around 50 hours to help organize and distribute donations for Hurricane Helene relief in Swannanoa.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Freshman Seminar Portfolio</p>
+    </footer>
+</div>
+
+</body>
+</html>
