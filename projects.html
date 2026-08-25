@@ -40,6 +40,20 @@
         p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
         
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
+        
+        /* Centered Flex Layout for Projects to make the 3rd card snap to center */
+        .projects-flex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+        .projects-flex-grid .card {
+            flex: 1 1 280px;
+            max-width: 420px;
+        }
+
         .card { background: rgba(12, 12, 18, 0.6); padding: 1.8rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: all 0.2s ease; display: flex; flex-direction: column; gap: 0.8rem; }
         .card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
         
@@ -125,7 +139,8 @@
     <section>
         <h3>Projects & Technical Exploration</h3>
         
-        <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+        <!-- Updated to projects-flex-grid so the 3rd card centers nicely -->
+        <div class="projects-flex-grid">
             <div class="card">
                 <div class="card-icon">
                     <svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
@@ -151,7 +166,7 @@
 
         <div class="quote-box">
             "I'd rather regret the things I've done than regret the things I haven't done."
-            <span>— Lucille Ball (A mindset that pushes me to dive into complex projects and keep experimenting.) </span>
+            <span>— A mindset that pushes me to dive into complex projects and keep experimenting.</span>
         </div>
     </section>
 
