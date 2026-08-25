@@ -19,7 +19,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; padding: 2rem 1rem; overflow-x: hidden; }
         
-        /* Background Glow Effect */
         .glow-bg {
             position: fixed; top: -20vh; left: 50%; transform: translateX(-50%);
             width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
@@ -28,64 +27,49 @@
 
         .container { max-width: 900px; margin: 0 auto; }
         
-        /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.2rem; backdrop-filter: blur(10px); }
         nav h2 { color: var(--text-main); font-size: 1.1rem; font-weight: 600; letter-spacing: -0.025em; display: flex; align-items: center; gap: 0.5rem; }
         nav div a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
         nav div a:hover, nav div a.active { color: var(--accent); }
         
-        /* Hero Section */
         .hero { display: grid; grid-template-columns: 160px 1fr; gap: 2.5rem; background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 2.5rem; align-items: center; backdrop-filter: blur(12px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); transition: transform 0.3s ease, border-color 0.3s ease; }
         .hero:hover { border-color: var(--border-hover); }
         
-        /* Profile Picture Framing */
         .avatar { width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--accent); overflow: hidden; box-shadow: 0 0 25px var(--accent-glow); flex-shrink: 0; }
         .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
         
         h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.3rem; letter-spacing: -0.03em; }
-        .subtitle { color: var(--accent); font-weight: 600; font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .subtitle { color: var(--accent); font-weight: 600; font-size: 0.92rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
         p { color: var(--text-muted); font-size: 0.95rem; }
         
-        /* Sections / Cards */
         section { background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 2rem; backdrop-filter: blur(12px); transition: all 0.3s ease; }
         section:hover { border-color: var(--border-hover); background: var(--card-hover); transform: translateY(-2px); }
         h3 { font-size: 1.25rem; margin-bottom: 1.2rem; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 0.75rem; }
         
-        /* Inline SVG Icon Helper */
-        .section-icon {
-            width: 24px;
-            height: 24px;
-            stroke: var(--accent);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            display: inline-block;
-            vertical-align: middle;
-        }
+        .section-icon { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: inline-block; vertical-align: middle; }
 
         .letter-body p { margin-bottom: 1rem; color: var(--text-muted); }
         .letter-body strong { color: var(--text-main); font-weight: 600; }
 
-        /* Future Goals Grid */
+        .quote-box {
+            border-left: 3px solid var(--accent);
+            background: rgba(139, 92, 246, 0.05);
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+        .quote-box span { display: block; font-style: normal; font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500; }
+
         .goals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
         .goal-card { background: rgba(12, 12, 18, 0.6); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.6rem; }
         .goal-card-header { display: flex; align-items: center; gap: 0.6rem; }
         .goal-card h4 { color: var(--text-main); font-size: 0.95rem; font-weight: 600; }
         .goal-card p { font-size: 0.85rem; color: var(--text-muted); }
         
-        .card-svg-icon {
-            width: 20px;
-            height: 20px;
-            stroke: var(--accent);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            flex-shrink: 0;
-        }
+        .card-svg-icon { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
-        /* Skill / Growth Bars */
         .skill-bar { margin-bottom: 1.4rem; }
         .skill-label { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.4rem; color: var(--text-main); }
         .skill-label span:last-child { color: var(--accent); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -123,9 +107,9 @@
             <h1>Hello, I'm Maddox.</h1>
             <div class="subtitle">
                 <svg class="section-icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                Freshman Mechatronics Focus &bull; NCSSM Applicant
+                McDowell Academy for Innovation Student &bull; Aspiring NCSSM Student
             </div>
-            <p>A freshman deeply into hardware systems, server tinkering, and building things from scratch. Focused on continuous learning and pushing past comfort zones both in and out of the classroom.</p>
+            <p>Deeply into hardware systems, server tinkering, and building things from scratch. Focused on pushing past comfort zones both academically and personally.</p>
         </div>
     </header>
 
@@ -137,23 +121,37 @@
         </h3>
         <div class="letter-body">
             <p><strong>Dear Mrs. Sealey,</strong></p>
-            <p>Starting high school comes with a lot of shifts. While I love diving into hands-on building and tech projects, I know I need to actively work on areas like public speaking and stepping outside my usual circle. My main <strong>goal for this seminar class</strong> is to build confidence when presenting in front of others and sharpen my organizational study habits.</p>
-            <p>Looking ahead, my plan is to apply to <strong>NCSSM</strong>, graduate, and head into a rigorous 4-year engineering program—with dream schools like <strong>MIT or Tsinghua</strong> on the horizon. To get there, I know I have to grow not just technically, but socially and communicatively.</p>
+            <p>Starting high school comes with big transitions. While I love diving into hands-on building and tech projects, I know I need to actively work on areas like public speaking and stepping outside my usual comfort zone. My main <strong>goal for this seminar class</strong> is to build confidence when presenting in front of others and sharpen my organizational study habits.</p>
+            <p>Looking ahead, my plan is to excel here at McDowell Academy, successfully apply to <strong>NCSSM</strong>, graduate, and head into a rigorous 4-year engineering program—with dream schools like <strong>MIT or Tsinghua</strong> on the horizon.</p>
+            
+            <div class="quote-box">
+                "You do not yield."
+                <span>— Kingdom of Ash (A mantra I keep in mind when tackling difficult challenges)</span>
+            </div>
+
             <p>For the aesthetic of this site, I went with a dark, clean developer theme with subtle purple accents—keeping it sharp, personal, and distraction-free.</p>
             <p style="margin-top: 1.5rem;"><em>Sign off,<br><strong style="color: var(--text-main);">Maddox Alexander</strong></em></p>
         </div>
     </section>
 
-    <!-- Real Personal Growth & Goals -->
+    <!-- Personal Philosophy (Brief Note) -->
+    <section>
+        <h3>
+            <svg class="section-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/></svg>
+            Perspective & Approach
+        </h3>
+        <p>I approach problems with a stoic, puzzle-solving mindset—staying calm when things break rather than getting frustrated. Because true control is limited, I focus less on outside expectations and more on pushing my own limits: raising my standards, embracing predictable logic, and making the most of the journey.</p>
+    </section>
+
+    <!-- Personal Growth & Goals -->
     <section>
         <h3>
             <svg class="section-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
             Personal Growth & Real Goals
         </h3>
-        <p style="margin-bottom: 1.5rem;">Instead of corporate buzzwords, here is what I'm actually focusing on improving this year:</p>
         
         <div class="skill-bar">
-            <div class="skill-label"><span>Public Speaking & Confidence (Tough challenge, working on it)</span><span>In Progress</span></div>
+            <div class="skill-label"><span>Public Speaking & Confidence (Tough challenge, actively working on it)</span><span>In Progress</span></div>
             <div class="progress"><div class="progress-fill" style="width: 50%;"></div></div>
         </div>
         <div class="skill-bar">
@@ -175,7 +173,7 @@
                     <svg class="card-svg-icon" viewBox="0 0 24 24"><path d="m4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
                     <h4>Short-Term Horizon</h4>
                 </div>
-                <p>Nail my freshman coursework, strengthen my study habits, and put together a strong application for NCSSM.</p>
+                <p>Nail my freshman coursework at McDowell, build stronger daily study routines, and put together a competitive application for NCSSM.</p>
             </div>
             <div class="goal-card">
                 <div class="goal-card-header">
