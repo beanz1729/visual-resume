@@ -7,10 +7,10 @@
     <style>
         :root {
             --bg-color: #070709;
-            --card-bg: rgba(20, 20, 28, 0.7);
-            --card-hover: rgba(30, 30, 42, 0.9);
+            --card-bg: rgba(20, 20, 28, 0.75);
+            --card-hover: rgba(30, 30, 44, 0.9);
             --accent: #8b5cf6;
-            --accent-glow: rgba(139, 92, 246, 0.15);
+            --accent-glow: rgba(139, 92, 246, 0.2);
             --text-main: #f4f4f5;
             --text-muted: #a1a1aa;
             --border: rgba(255, 255, 255, 0.08);
@@ -30,7 +30,7 @@
         
         /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.2rem; backdrop-filter: blur(10px); }
-        nav h2 { color: var(--text-main); font-size: 1.1rem; font-weight: 600; letter-spacing: -0.025em; }
+        nav h2 { color: var(--text-main); font-size: 1.1rem; font-weight: 600; letter-spacing: -0.025em; display: flex; align-items: center; gap: 0.5rem; }
         nav div a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
         nav div a:hover, nav div a.active { color: var(--accent); }
         
@@ -38,29 +38,59 @@
         .hero { display: grid; grid-template-columns: 160px 1fr; gap: 2.5rem; background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 2.5rem; align-items: center; backdrop-filter: blur(12px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); transition: transform 0.3s ease, border-color 0.3s ease; }
         .hero:hover { border-color: var(--border-hover); }
         
-        /* Profile Picture Framing (Centered on face) */
-        .avatar { width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--accent); overflow: hidden; box-shadow: 0 0 20px var(--accent-glow); flex-shrink: 0; }
+        /* Profile Picture Framing */
+        .avatar { width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--accent); overflow: hidden; box-shadow: 0 0 25px var(--accent-glow); flex-shrink: 0; }
         .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
         
         h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.3rem; letter-spacing: -0.03em; }
-        .subtitle { color: var(--accent); font-weight: 600; font-size: 1rem; margin-bottom: 1rem; }
+        .subtitle { color: var(--accent); font-weight: 600; font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
         p { color: var(--text-muted); font-size: 0.95rem; }
         
         /* Sections / Cards */
         section { background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 2rem; backdrop-filter: blur(12px); transition: all 0.3s ease; }
         section:hover { border-color: var(--border-hover); background: var(--card-hover); transform: translateY(-2px); }
-        h3 { font-size: 1.25rem; margin-bottom: 1.2rem; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
-        h3::before { content: ''; display: inline-block; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+        h3 { font-size: 1.25rem; margin-bottom: 1.2rem; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 0.75rem; }
         
+        /* Inline SVG Icon Helper */
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
         .letter-body p { margin-bottom: 1rem; color: var(--text-muted); }
         .letter-body strong { color: var(--text-main); font-weight: 600; }
 
-        /* Skill Bars with Smooth Animation */
-        .skill-bar { margin-bottom: 1.2rem; }
+        /* Future Goals Grid */
+        .goals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .goal-card { background: rgba(12, 12, 18, 0.6); padding: 1.2rem; border-radius: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.6rem; }
+        .goal-card-header { display: flex; align-items: center; gap: 0.6rem; }
+        .goal-card h4 { color: var(--text-main); font-size: 0.95rem; font-weight: 600; }
+        .goal-card p { font-size: 0.85rem; color: var(--text-muted); }
+        
+        .card-svg-icon {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        /* Skill / Growth Bars */
+        .skill-bar { margin-bottom: 1.4rem; }
         .skill-label { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.4rem; color: var(--text-main); }
-        .skill-label span:last-child { color: var(--accent); font-weight: 600; }
+        .skill-label span:last-child { color: var(--accent); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .progress { background: #12121a; height: 8px; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
-        .progress-fill { background: linear-gradient(90deg, #6366f1, var(--accent)); height: 100%; border-radius: 4px; transition: width 1s ease-in-out; }
+        .progress-fill { background: linear-gradient(90deg, #6366f1, var(--accent)); height: 100%; border-radius: 4px; }
 
         footer { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 4rem; padding-bottom: 2rem; }
         
@@ -84,50 +114,81 @@
         </div>
     </nav>
 
-    <!-- Sleek Hero Section with Face-Centered Photo -->
+    <!-- Hero Section -->
     <header class="hero">
         <div class="avatar">
             <img src="20260825_172929.jpg" alt="Maddox Alexander">
         </div>
         <div>
             <h1>Hello, I'm Maddox.</h1>
-            <div class="subtitle">Freshman Seminar Portfolio</div>
-            <p>A freshman exploring technology, hardware systems, and hands-on engineering, focused on building clean digital experiences and learning how things work from the ground up.</p>
+            <div class="subtitle">
+                <svg class="section-icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Freshman Mechatronics Focus &bull; NCSSM Applicant
+            </div>
+            <p>A freshman deeply into hardware systems, server tinkering, and building things from scratch. Focused on continuous learning and pushing past comfort zones both in and out of the classroom.</p>
         </div>
     </header>
 
     <!-- Cover Letter for Mrs. Sealey -->
     <section>
-        <h3>Cover Letter to Mrs. Sealey</h3>
+        <h3>
+            <svg class="section-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Cover Letter to Mrs. Sealey
+        </h3>
         <div class="letter-body">
             <p><strong>Dear Mrs. Sealey,</strong></p>
-            <p>As I step into this seminar class as a freshman, I am most <strong>excited</strong> about diving into collaborative projects, sharpening my communication skills, and figuring out how to balance high-level creative thinking with technical problem-solving.</p>
-            <p>My primary <strong>concern</strong> is making sure I stay organized and manage my time well as the workload increases with more complex, independent assignments.</p>
-            <p>My <strong>goals for this course</strong> are to build stronger habits in professional presentation, improve my formal writing, and learn how to present my technical and hands-on projects clearly to others.</p>
-            <p>Regarding my <strong>color choices and visual design</strong>: I went with a sleek dark-mode aesthetic featuring deep charcoal tones and subtle purple accents. This clean, modern interface style reflects a focused, tech-forward mindset while keeping the presentation crisp and easy to navigate.</p>
+            <p>Starting high school comes with a lot of shifts. While I love diving into hands-on building and tech projects, I know I need to actively work on areas like public speaking and stepping outside my usual circle. My main <strong>goal for this seminar class</strong> is to build confidence when presenting in front of others and sharpen my organizational study habits.</p>
+            <p>Looking ahead, my plan is to apply to <strong>NCSSM</strong>, graduate, and head into a rigorous 4-year engineering program—with dream schools like <strong>MIT or Tsinghua</strong> on the horizon. To get there, I know I have to grow not just technically, but socially and communicatively.</p>
+            <p>For the aesthetic of this site, I went with a dark, clean developer theme with subtle purple accents—keeping it sharp, personal, and distraction-free.</p>
             <p style="margin-top: 1.5rem;"><em>Sign off,<br><strong style="color: var(--text-main);">Maddox Alexander</strong></em></p>
         </div>
     </section>
 
-    <!-- Growing Skillset -->
+    <!-- Real Personal Growth & Goals -->
     <section>
-        <h3>My Growing Skillset</h3>
+        <h3>
+            <svg class="section-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            Personal Growth & Real Goals
+        </h3>
+        <p style="margin-bottom: 1.5rem;">Instead of corporate buzzwords, here is what I'm actually focusing on improving this year:</p>
+        
         <div class="skill-bar">
-            <div class="skill-label"><span>An area I'm looking to improve: Pacing open-ended creative reflections</span><span>In Progress</span></div>
+            <div class="skill-label"><span>Public Speaking & Confidence (Tough challenge, working on it)</span><span>In Progress</span></div>
+            <div class="progress"><div class="progress-fill" style="width: 50%;"></div></div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-label"><span>Branching Out Socially (Stepping outside my usual friend group)</span><span>Growing</span></div>
             <div class="progress"><div class="progress-fill" style="width: 65%;"></div></div>
         </div>
         <div class="skill-bar">
-            <div class="skill-label"><span>A skill I'm great at: Systematic troubleshooting and hands-on building</span><span>Strong</span></div>
-            <div class="progress"><div class="progress-fill" style="width: 90%;"></div></div>
+            <div class="skill-label"><span>Study Habits & Long-Term Focus (Building rock-solid routines)</span><span>Improving</span></div>
+            <div class="progress"><div class="progress-fill" style="width: 80%;"></div></div>
         </div>
         <div class="skill-bar">
-            <div class="skill-label"><span>A goal for this year: Effective public presentation and professional networking</span><span>Target</span></div>
-            <div class="progress"><div class="progress-fill" style="width: 75%;"></div></div>
+            <div class="skill-label"><span>Hands-On Building & Tech Systems (Mechatronics & Code)</span><span>Strong</span></div>
+            <div class="progress"><div class="progress-fill" style="width: 95%;"></div></div>
+        </div>
+
+        <div class="goals-grid">
+            <div class="goal-card">
+                <div class="goal-card-header">
+                    <svg class="card-svg-icon" viewBox="0 0 24 24"><path d="m4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+                    <h4>Short-Term Horizon</h4>
+                </div>
+                <p>Nail my freshman coursework, strengthen my study habits, and put together a strong application for NCSSM.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-card-header">
+                    <svg class="card-svg-icon" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <h4>Long-Term Dream</h4>
+                </div>
+                <p>Graduate, head into a top-tier 4-year university engineering program, and aim for world-class institutions like MIT or Tsinghua.</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>Designed with custom dark-mode CSS &bull; Built for Seminar</p>
+        <p>Built with custom dark-mode CSS &bull; Freshman Seminar Portfolio</p>
     </footer>
 </div>
 
