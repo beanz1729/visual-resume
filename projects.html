@@ -7,10 +7,10 @@
     <style>
         :root {
             --bg-color: #070709;
-            --card-bg: rgba(20, 20, 28, 0.7);
-            --card-hover: rgba(30, 30, 42, 0.9);
+            --card-bg: rgba(20, 20, 28, 0.75);
+            --card-hover: rgba(30, 30, 44, 0.9);
             --accent: #8b5cf6;
-            --accent-glow: rgba(139, 92, 246, 0.15);
+            --accent-glow: rgba(139, 92, 246, 0.2);
             --text-main: #f4f4f5;
             --text-muted: #a1a1aa;
             --border: rgba(255, 255, 255, 0.08);
@@ -28,25 +28,52 @@
         .container { max-width: 900px; margin: 0 auto; }
         
         nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1.2rem; backdrop-filter: blur(10px); }
-        nav h2 { color: var(--text-main); font-size: 1.1rem; font-weight: 600; letter-spacing: -0.025em; }
+        nav h2 { color: var(--text-main); font-size: 1.1rem; font-weight: 600; letter-spacing: -0.025em; display: flex; align-items: center; gap: 0.5rem; }
         nav div a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
         nav div a:hover, nav div a.active { color: var(--accent); }
         
         section { background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 2rem; backdrop-filter: blur(12px); transition: all 0.3s ease; }
         section:hover { border-color: var(--border-hover); background: var(--card-hover); transform: translateY(-2px); }
         
-        h3 { font-size: 1.25rem; margin-bottom: 1.2rem; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
-        h3::before { content: ''; display: inline-block; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+        h3 { font-size: 1.25rem; margin-bottom: 1.2rem; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 0.75rem; }
         
         p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
         
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 1.2rem; }
-        .card { background: rgba(15, 15, 22, 0.6); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: border-color 0.2s ease; }
-        .card:hover { border-color: var(--border-hover); }
-        .card h4 { color: var(--text-main); margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; }
-        .card p { font-size: 0.88rem; margin-bottom: 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
+        .card { background: rgba(12, 12, 18, 0.6); padding: 1.8rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: all 0.2s ease; display: flex; flex-direction: column; gap: 0.8rem; }
+        .card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+        
+        /* Custom SVG Graphic Icon Container */
+        .card-icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            margin-bottom: 0.2rem;
+        }
+        .card-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .card h4 { color: var(--text-main); font-size: 1.05rem; font-weight: 600; }
+        .card p { font-size: 0.88rem; margin-bottom: 0; color: var(--text-muted); }
 
         footer { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 4rem; padding-bottom: 2rem; }
+        
+        @media(max-width: 768px) { 
+            section { padding: 1.5rem; } 
+        }
     </style>
 </head>
 <body>
@@ -62,20 +89,32 @@
         </div>
     </nav>
 
-    <!-- Passions -->
+    <!-- Core Passions with Vector SVG Icons -->
     <section>
         <h3>Core Interests & Focus</h3>
         <p>A few areas that capture my curiosity outside of standard classroom subjects:</p>
         <div class="grid-3">
             <div class="card">
+                <div class="card-icon">
+                    <!-- Gear SVG (Mechatronics) -->
+                    <svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .69.41 1.31 1.03 1.51h.07a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.07a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+                </div>
                 <h4>Mechatronics & Systems</h4>
                 <p>Exploring how physical hardware, electronics, and programming intersect through building and tinkering.</p>
             </div>
             <div class="card">
+                <div class="card-icon">
+                    <!-- Atom SVG (Scientific Inquiry) -->
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4m-3.17-7.83-2.83 2.83m-8 8-2.83 2.83m0-13.66 2.83 2.83m8 8 2.83 2.83"/></svg>
+                </div>
                 <h4>Scientific Inquiry</h4>
                 <p>Enjoying the process of testing ideas, scientific experiments, and collaborative problem-solving.</p>
             </div>
             <div class="card">
+                <div class="card-icon">
+                    <!-- Users SVG (Community) -->
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
                 <h4>Community & Service</h4>
                 <p>Valuing teamwork and helping out locally—whether through youth group activities or community relief support.</p>
             </div>
@@ -85,11 +124,11 @@
     <!-- Milestones & Experiences -->
     <section>
         <h3>Milestones & Experience</h3>
-        <div class="card" style="margin-bottom: 1.2rem;">
+        <div class="card" style="margin-bottom: 1.2rem; flex-direction: column;">
             <h4>Collaborative STEM & Competitions</h4>
             <p>Participating in team-based challenges like Science Olympiad and robotics has been a great way to learn how to troubleshoot under pressure. Working alongside peers to build and test designs taught me the true value of team problem-solving.</p>
         </div>
-        <div class="card">
+        <div class="card" style="flex-direction: column;">
             <h4>Community Involvement</h4>
             <p>Outside of school, I try to stay grounded by supporting community initiatives, such as volunteering around 50 hours to help organize and distribute supplies for Hurricane Helene relief efforts in Swannanoa.</p>
         </div>
