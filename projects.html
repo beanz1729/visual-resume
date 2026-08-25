@@ -43,31 +43,34 @@
         .card { background: rgba(12, 12, 18, 0.6); padding: 1.8rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: all 0.2s ease; display: flex; flex-direction: column; gap: 0.8rem; }
         .card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
         
-        /* Custom SVG Graphic Icon Container */
         .card-icon {
-            width: 38px;
-            height: 38px;
+            width: 38px; height: 38px;
             background: rgba(139, 92, 246, 0.1);
             border: 1px solid rgba(139, 92, 246, 0.3);
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             color: var(--accent);
             margin-bottom: 0.2rem;
         }
         .card-icon svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+            width: 20px; height: 20px;
+            stroke: currentColor; fill: none;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
         }
 
         .card h4 { color: var(--text-main); font-size: 1.05rem; font-weight: 600; }
         .card p { font-size: 0.88rem; margin-bottom: 0; color: var(--text-muted); }
+
+        .quote-box {
+            border-left: 3px solid var(--accent);
+            background: rgba(139, 92, 246, 0.05);
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0 0 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+        .quote-box span { display: block; font-style: normal; font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; font-weight: 500; }
 
         footer { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 4rem; padding-bottom: 2rem; }
         
@@ -92,11 +95,10 @@
     <!-- Core Passions with Vector SVG Icons -->
     <section>
         <h3>Core Interests & Focus</h3>
-        <p>A few areas that capture my curiosity outside of standard classroom subjects:</p>
+        <p>Areas that capture my curiosity outside of standard classroom subjects:</p>
         <div class="grid-3">
             <div class="card">
                 <div class="card-icon">
-                    <!-- Gear SVG (Mechatronics) -->
                     <svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .69.41 1.31 1.03 1.51h.07a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.07a1.65 1.65 0 0 0-1.51 1Z"/></svg>
                 </div>
                 <h4>Mechatronics & Systems</h4>
@@ -104,33 +106,52 @@
             </div>
             <div class="card">
                 <div class="card-icon">
-                    <!-- Atom SVG (Scientific Inquiry) -->
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4m-3.17-7.83-2.83 2.83m-8 8-2.83 2.83m0-13.66 2.83 2.83m8 8 2.83 2.83"/></svg>
                 </div>
                 <h4>Scientific Inquiry</h4>
-                <p>Enjoying the process of testing ideas, scientific experiments, and collaborative problem-solving.</p>
+                <p>Enjoying the process of testing ideas, scientific experimentation, and logical problem-solving.</p>
             </div>
             <div class="card">
                 <div class="card-icon">
-                    <!-- Users SVG (Community) -->
-                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
                 </div>
-                <h4>Community & Service</h4>
-                <p>Valuing teamwork and helping out locally—whether through youth group activities or community relief support.</p>
+                <h4>Self-Hosting & Homelabs</h4>
+                <p>Building functional servers from modest hardware like ThinkPads using Proxmox to host local services and utilities.</p>
             </div>
         </div>
     </section>
 
-    <!-- Milestones & Experiences -->
+    <!-- Hands-On Projects & Technical Milestones -->
     <section>
-        <h3>Milestones & Experience</h3>
-        <div class="card" style="margin-bottom: 1.2rem; flex-direction: column;">
-            <h4>Collaborative STEM & Competitions</h4>
-            <p>Participating in team-based challenges like Science Olympiad and robotics has been a great way to learn how to troubleshoot under pressure. Working alongside peers to build and test designs taught me the true value of team problem-solving.</p>
+        <h3>Projects & Technical Exploration</h3>
+        
+        <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+            <div class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                </div>
+                <h4>Homelab & Proxmox Server</h4>
+                <p>Configuring a Lenovo ThinkPad T440 running Proxmox VE to host practical self-hosted services including Home Assistant, Pi-hole, Nextcloud, and Jellyfin.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+                </div>
+                <h4>Linux & Chromebook Modding</h4>
+                <p>Experimenting with hardware by flashing custom firmware onto older Chromebooks to run lightweight distributions like Arch Linux for coding.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+                </div>
+                <h4>Web Accessibility Tools</h4>
+                <p>Designing custom browser extensions focused on scanning web pages and dynamically adjusting color schemes to improve visual accessibility.</p>
+            </div>
         </div>
-        <div class="card" style="flex-direction: column;">
-            <h4>Community Involvement</h4>
-            <p>Outside of school, I try to stay grounded by supporting community initiatives, such as volunteering around 50 hours to help organize and distribute supplies for Hurricane Helene relief efforts in Swannanoa.</p>
+
+        <div class="quote-box">
+            "I'd rather regret the things I've done than regret the things I haven't done."
+            <span>— A mindset that pushes me to dive into complex projects and keep experimenting.</span>
         </div>
     </section>
 
